@@ -7,7 +7,6 @@ Globals:
     Runtime: nodejs18.x
     Timeout: 30
     MemorySize: 512
-    ReservedConcurrentExecutions: 5
     Environment:
       Variables:
         NODE_ENV: !Ref Environment
@@ -31,9 +30,6 @@ Resources:
         AllowMethods: "'*'"
         AllowHeaders: "'*'"
         AllowOrigin: "'*'"
-      ThrottleConfig:
-        RateLimit: 1000
-        BurstLimit: 2000
 
   # Lambda Function
   ApiFunction:

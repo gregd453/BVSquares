@@ -132,20 +132,5 @@ Cypress.Commands.add('mockApiResponse', (method, url, response, status = 200) =>
   });
 });
 
-// Add type definitions for TypeScript support
-declare global {
-  namespace Cypress {
-    interface Chainable {
-      loginAsPlayer(email?: string, password?: string): Chainable<Element>
-      loginAsAdmin(email?: string, password?: string): Chainable<Element>
-      registerPlayer(username: string, email: string, displayName: string, password: string): Chainable<Element>
-      logout(): Chainable<Element>
-      createTestGame(gameData?: any): Chainable<Element>
-      requestSquare(row: number, col: number): Chainable<Element>
-      checkA11y(options?: any): Chainable<Element>
-      checkResponsive(selector?: string): Chainable<Element>
-      waitForApi(): Chainable<Element>
-      mockApiResponse(method: string, url: string, response: any, status?: number): Chainable<Element>
-    }
-  }
-}
+// Custom Cypress commands defined above
+// Type definitions can be found in cypress/support/index.d.ts

@@ -1,0 +1,12 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": ".next",
+  "framework": "nextjs",
+  "regions": ["us-east-1"],
+  "env": {
+    "NEXT_PUBLIC_API_URL": "https://1sffimi1hb.execute-api.us-east-1.amazonaws.com/prod",
+    "NEXT_PUBLIC_COGNITO_USER_POOL_ID": "us-east-1_qsXZKfDtg",
+    "NEXT_PUBLIC_COGNITO_CLIENT_ID": "46i0eschfj0vtu9td55npe5h5b",
+    "NEXT_PUBLIC_AWS_REGION": "us-east-1"
+  }
+}
