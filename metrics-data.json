@@ -1,0 +1,310 @@
+{
+  "pipelineHealth": {
+    "overallScore": 92,
+    "healthStatus": "excellent",
+    "criticalIssues": 0,
+    "totalValidations": 29,
+    "passedValidations": 16,
+    "failedValidations": 2,
+    "warningValidations": 0,
+    "completionRate": 100,
+    "reliabilityScore": 120
+  },
+  "agentPerformance": [
+    {
+      "agentName": "analyzer",
+      "stage": 1,
+      "executionTime": 7,
+      "qualityScore": 100,
+      "validationsPassed": 1,
+      "validationsFailed": 0,
+      "outputSize": 9543,
+      "errorRate": 0,
+      "throughput": 1363.29,
+      "efficiency": 14.29
+    },
+    {
+      "agentName": "designer",
+      "stage": 2,
+      "executionTime": 3,
+      "qualityScore": 100,
+      "validationsPassed": 1,
+      "validationsFailed": 0,
+      "outputSize": 27211,
+      "errorRate": 0,
+      "throughput": 9070.33,
+      "efficiency": 33.33
+    },
+    {
+      "agentName": "planner",
+      "stage": 3,
+      "executionTime": 2,
+      "qualityScore": 100,
+      "validationsPassed": 1,
+      "validationsFailed": 0,
+      "outputSize": 14882,
+      "errorRate": 0,
+      "throughput": 7441,
+      "efficiency": 50
+    },
+    {
+      "agentName": "controller",
+      "stage": 4,
+      "executionTime": 1,
+      "qualityScore": 100,
+      "validationsPassed": 1,
+      "validationsFailed": 0,
+      "outputSize": 19464,
+      "errorRate": 0,
+      "throughput": 19464,
+      "efficiency": 100
+    },
+    {
+      "agentName": "writer",
+      "stage": 5,
+      "executionTime": 4,
+      "qualityScore": 100,
+      "validationsPassed": 1,
+      "validationsFailed": 0,
+      "outputSize": 74890,
+      "errorRate": 0,
+      "throughput": 18722.5,
+      "efficiency": 25
+    }
+  ],
+  "qualityTrends": {
+    "improvementRate": 22.54,
+    "consistencyScore": 89,
+    "stabilityIndex": 90,
+    "qualityGrowthTrend": "improving",
+    "bestPerformingStage": "Context Generation Gate",
+    "weakestStage": "Requirements Analysis Gate",
+    "averageStageScore": 92,
+    "scoreDistribution": [
+      71,
+      100,
+      100,
+      100,
+      87
+    ]
+  },
+  "validationInsights": {
+    "mostCommonFailures": [
+      {
+        "category": "enhancement",
+        "frequency": 2,
+        "impact": "medium",
+        "description": "enhancement issues occur frequently across pipeline stages",
+        "recommendation": "Implement systematic enhancement validation checks"
+      }
+    ],
+    "criticalPatterns": [
+      {
+        "category": "Cross-Stage Issue",
+        "frequency": 3,
+        "impact": "high",
+        "description": "Data model inconsistencies detected across pipeline stages",
+        "recommendation": "Implement consistent naming conventions"
+      }
+    ],
+    "successPatterns": [
+      {
+        "category": "High Performance",
+        "frequency": 1,
+        "impact": "medium",
+        "description": "Context Generation Gate consistently achieves high quality scores (100%)",
+        "recommendation": "Apply Context Generation Gate best practices to other pipeline stages"
+      },
+      {
+        "category": "High Performance",
+        "frequency": 1,
+        "impact": "medium",
+        "description": "Infrastructure Planning Gate consistently achieves high quality scores (100%)",
+        "recommendation": "Apply Infrastructure Planning Gate best practices to other pipeline stages"
+      },
+      {
+        "category": "High Performance",
+        "frequency": 1,
+        "impact": "medium",
+        "description": "Quality Assurance Gate consistently achieves high quality scores (100%)",
+        "recommendation": "Apply Quality Assurance Gate best practices to other pipeline stages"
+      }
+    ],
+    "improvementOpportunities": [
+      {
+        "category": "Pipeline Optimization",
+        "frequency": 1,
+        "impact": "medium",
+        "description": "No critical issues detected - focus on optimization and enhancements",
+        "recommendation": "Implement performance optimizations and advanced features"
+      },
+      {
+        "category": "Quality Enhancement",
+        "frequency": 2,
+        "impact": "high",
+        "description": "2 high-priority improvements identified",
+        "recommendation": "Address high-priority feedback messages for significant quality gains"
+      }
+    ],
+    "crossStageCorrelations": [
+      {
+        "fromStage": "Requirements Analysis Gate",
+        "toStage": "Context Generation Gate",
+        "correlationStrength": 0.71,
+        "relationship": "Positive correlation",
+        "confidence": 71
+      },
+      {
+        "fromStage": "Requirements Analysis Gate",
+        "toStage": "Infrastructure Planning Gate",
+        "correlationStrength": 0.71,
+        "relationship": "Positive correlation",
+        "confidence": 71
+      },
+      {
+        "fromStage": "Requirements Analysis Gate",
+        "toStage": "Quality Assurance Gate",
+        "correlationStrength": 0.71,
+        "relationship": "Positive correlation",
+        "confidence": 71
+      },
+      {
+        "fromStage": "Requirements Analysis Gate",
+        "toStage": "Documentation Generation Gate",
+        "correlationStrength": 0.84,
+        "relationship": "Positive correlation",
+        "confidence": 84
+      },
+      {
+        "fromStage": "Context Generation Gate",
+        "toStage": "Infrastructure Planning Gate",
+        "correlationStrength": 1,
+        "relationship": "Positive correlation",
+        "confidence": 100
+      },
+      {
+        "fromStage": "Context Generation Gate",
+        "toStage": "Quality Assurance Gate",
+        "correlationStrength": 1,
+        "relationship": "Positive correlation",
+        "confidence": 100
+      },
+      {
+        "fromStage": "Context Generation Gate",
+        "toStage": "Documentation Generation Gate",
+        "correlationStrength": 0.87,
+        "relationship": "Positive correlation",
+        "confidence": 87
+      },
+      {
+        "fromStage": "Infrastructure Planning Gate",
+        "toStage": "Quality Assurance Gate",
+        "correlationStrength": 1,
+        "relationship": "Positive correlation",
+        "confidence": 100
+      },
+      {
+        "fromStage": "Infrastructure Planning Gate",
+        "toStage": "Documentation Generation Gate",
+        "correlationStrength": 0.87,
+        "relationship": "Positive correlation",
+        "confidence": 87
+      },
+      {
+        "fromStage": "Quality Assurance Gate",
+        "toStage": "Documentation Generation Gate",
+        "correlationStrength": 0.87,
+        "relationship": "Positive correlation",
+        "confidence": 87
+      }
+    ]
+  },
+  "recommendationPriority": [
+    {
+      "priority": "high",
+      "category": "Testing & Validation",
+      "title": "Document all build validation steps with troubleshooting guidance",
+      "description": "Implementation of: Document all build validation steps with troubleshooting guidance",
+      "estimatedImpact": 85,
+      "implementationEffort": "low",
+      "affectedStages": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "expectedImprovement": 102
+    },
+    {
+      "priority": "low",
+      "category": "Testing & Validation",
+      "title": "Add database integration tests for all CRUD operations",
+      "description": "Implementation of: Add database integration tests for all CRUD operations",
+      "estimatedImpact": 85,
+      "implementationEffort": "medium",
+      "affectedStages": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "expectedImprovement": 85
+    },
+    {
+      "priority": "low",
+      "category": "Testing & Validation",
+      "title": "Add comprehensive testing guide with strategy explanations",
+      "description": "Implementation of: Add comprehensive testing guide with strategy explanations",
+      "estimatedImpact": 85,
+      "implementationEffort": "high",
+      "affectedStages": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "expectedImprovement": 68
+    },
+    {
+      "priority": "low",
+      "category": "Testing & Validation",
+      "title": "Add test execution instructions and test suite descriptions to documentation",
+      "description": "Implementation of: Add test execution instructions and test suite descriptions to documentation",
+      "estimatedImpact": 60,
+      "implementationEffort": "medium",
+      "affectedStages": [
+        2
+      ],
+      "expectedImprovement": 60
+    },
+    {
+      "priority": "low",
+      "category": "User Interface",
+      "title": "Consider implementing domain-specific UI components and layouts",
+      "description": "Implementation of: Consider implementing domain-specific UI components and layouts",
+      "estimatedImpact": 45,
+      "implementationEffort": "high",
+      "affectedStages": [
+        2
+      ],
+      "expectedImprovement": 36
+    }
+  ],
+  "executionProfile": {
+    "totalExecutionTime": 0,
+    "averageStageTime": 3,
+    "bottleneckStage": "analyzer",
+    "fastestStage": "controller",
+    "resourceUtilization": 0,
+    "scalabilityScore": 82,
+    "parallelizationOpportunities": [
+      "Stage 4 could be parallelized with other fast stages"
+    ],
+    "performanceOptimizations": [
+      "Consider output size optimization for stage 5"
+    ]
+  }
+}

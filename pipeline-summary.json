@@ -1,0 +1,46 @@
+{
+  "success": false,
+  "stages_completed": 5,
+  "total_stages": 5,
+  "execution_time_ms": 0,
+  "errors_count": 0,
+  "warnings_count": 0,
+  "timestamp": "2025-08-26T09:52:42.121Z",
+  "stage_timings": [
+    {
+      "stage": "agent-1",
+      "success": true,
+      "execution_time_ms": 7,
+      "errors": 0,
+      "warnings": 0
+    },
+    {
+      "stage": "agent-2",
+      "success": true,
+      "execution_time_ms": 3,
+      "errors": 0,
+      "warnings": 0
+    },
+    {
+      "stage": "agent-3",
+      "success": true,
+      "execution_time_ms": 2,
+      "errors": 0,
+      "warnings": 0
+    },
+    {
+      "stage": "agent-4",
+      "success": true,
+      "execution_time_ms": 1,
+      "errors": 0,
+      "warnings": 0
+    },
+    {
+      "stage": "agent-5",
+      "success": true,
+      "execution_time_ms": 4,
+      "errors": 0,
+      "warnings": 0
+    }
+  ]
+}

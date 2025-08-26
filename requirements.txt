@@ -1,0 +1,94 @@
+# **BV Squares - MVP Requirements**
+
+## 📋 **OVERVIEW**
+Web application for managing sports betting squares. Players register and request squares on game grids. Admins approve requests, assign random numbers, and update scores to determine winners. No payments - display names shown in squares for identification.
+
+---
+
+## 🎯 **BUSINESS REQUIREMENTS**
+
+### **MVP Scope**
+- Core sports squares game functionality with admin approval system
+- Basic user registration (username/password/display name)
+- Game creation and management by admins
+- Square requesting with approval workflow
+- Manual score updates and winner determination
+
+### **Excluded from MVP**
+- ❌ Payments ❌ Analytics ❌ Communications ❌ Social features
+
+---
+
+## ⚡ **FUNCTIONAL REQUIREMENTS**
+
+### **1. User Authentication**
+- Players: username/password/display name registration, separate login page
+- Admins: separate login system, manual account creation only
+- Display names shown in squares, must be unique
+- Separate session management for each user type
+
+### **2. Game Management (Admin)**
+- Create/edit games for football, basketball, soccer
+- Games have Setup/Active/Completed states
+- Fixed 10x10 grid (100 squares)
+- Include payout structure for reference (no actual payments)
+
+### **3. Square Request System**
+- Players request squares (multiple per game allowed)
+- Requests show as "requested" with display name until admin approval
+- Players can cancel their own pending requests (before approval only)
+- Admin approves/rejects requests individually
+- Once approved, only admin can remove squares from players
+- Only approved squares count as owned
+
+### **4. Number Assignment & Scoring**
+- Admin assigns random numbers to rows/columns after square sales close
+- Admin updates quarter scores manually
+- System calculates winners automatically for each quarter
+- Display winners prominently on game grid
+
+---
+
+## 🖥️ **UI/UX REQUIREMENTS**
+
+### **Public Game View**
+- Browse games without login (Setup/Active games only)
+- See grid with display names in claimed squares
+- View current scores and quarter winners
+- Can't interact without login
+
+### **Player Dashboard**
+- View owned squares across all games
+- See request status (pending/approved/rejected)
+- Request new squares in available games
+- Cancel pending requests
+
+### **Admin Dashboard**
+- Manage all games (create/edit/archive)
+- Review pending square requests with approve/reject actions
+- Assign numbers to active games
+- Update scores and see winners
+- Remove squares from players if needed
+
+---
+
+## 🔧 **TECHNICAL REQUIREMENTS**
+
+### **Data Models**
+- Users (players & admins)
+- Games (with sport, state, payout structure)
+- Squares (linked to users and games)
+- Square Requests (approval workflow)
+
+### **Core Features**
+- Responsive design (mobile-friendly)
+- Real-time updates when scores/squares change
+- Input validation and error handling
+- Session management and auth guards
+
+---
+
+## 🚀 **DEPLOYMENT**
+- Single deployment for both admin and player interfaces
+- Standard web application hosting
+- Database for users, games, squares, and requests

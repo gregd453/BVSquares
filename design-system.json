@@ -1,0 +1,255 @@
+{
+  "design_system": {
+    "colors": {
+      "primary": [
+        "#3B82F6",
+        "#1D4ED8",
+        "#1E40AF"
+      ],
+      "secondary": [
+        "#8B5CF6",
+        "#7C3AED",
+        "#6D28D9"
+      ],
+      "neutral": [
+        "#F9FAFB",
+        "#F3F4F6",
+        "#E5E7EB",
+        "#9CA3AF",
+        "#6B7280",
+        "#374151",
+        "#111827"
+      ],
+      "semantic": {
+        "success": "#10B981",
+        "warning": "#F59E0B",
+        "error": "#EF4444",
+        "info": "#3B82F6"
+      }
+    },
+    "typography": {
+      "font_families": {
+        "primary": "Inter, sans-serif",
+        "secondary": "Georgia, serif",
+        "mono": "JetBrains Mono, Monaco, monospace"
+      },
+      "font_sizes": {
+        "xs": "0.75rem",
+        "sm": "0.875rem",
+        "base": "1rem",
+        "lg": "1.125rem",
+        "xl": "1.25rem",
+        "2xl": "1.5rem",
+        "3xl": "1.875rem",
+        "4xl": "2.25rem"
+      },
+      "font_weights": {
+        "light": "300",
+        "normal": "400",
+        "medium": "500",
+        "semibold": "600",
+        "bold": "700"
+      }
+    },
+    "spacing": {
+      "scale": [
+        "0",
+        "0.25rem",
+        "0.5rem",
+        "0.75rem",
+        "1rem",
+        "1.25rem",
+        "1.5rem",
+        "2rem",
+        "2.5rem",
+        "3rem",
+        "4rem",
+        "5rem",
+        "6rem",
+        "8rem"
+      ],
+      "breakpoints": {
+        "mobile": "320px",
+        "tablet": "768px",
+        "desktop": "1024px",
+        "wide": "1280px"
+      }
+    }
+  },
+  "component_standards": {
+    "buttons": {
+      "variants": {
+        "primary": {
+          "background": "#3B82F6",
+          "color": "#FFFFFF",
+          "border": "none",
+          "hover": {
+            "background": "#1D4ED8"
+          }
+        },
+        "secondary": {
+          "background": "transparent",
+          "color": "#3B82F6",
+          "border": "1px solid #3B82F6",
+          "hover": {
+            "background": "#3B82F6",
+            "color": "#FFFFFF"
+          }
+        },
+        "tertiary": {
+          "background": "transparent",
+          "color": "#374151",
+          "border": "none",
+          "hover": {
+            "background": "#F3F4F6"
+          }
+        }
+      },
+      "sizes": {
+        "sm": {
+          "padding": "0.5rem 1rem",
+          "fontSize": "0.875rem"
+        },
+        "md": {
+          "padding": "0.75rem 1.5rem",
+          "fontSize": "1rem"
+        },
+        "lg": {
+          "padding": "1rem 2rem",
+          "fontSize": "1.125rem"
+        }
+      },
+      "states": [
+        "default",
+        "hover",
+        "active",
+        "disabled",
+        "loading"
+      ]
+    },
+    "forms": {
+      "input_styles": {
+        "default": {
+          "border": "1px solid #9CA3AF",
+          "borderRadius": "0.375rem",
+          "padding": "0.75rem",
+          "fontSize": "1rem",
+          "focusBorder": "#3B82F6"
+        },
+        "error": {
+          "border": "1px solid #EF4444",
+          "focusBorder": "#EF4444"
+        }
+      },
+      "validation": {
+        "show_errors": true,
+        "real_time_validation": true,
+        "error_styling": "border_and_text"
+      }
+    },
+    "layout": {
+      "container": {
+        "maxWidth": "1200px",
+        "padding": "0 1rem",
+        "margin": "0 auto"
+      },
+      "grid": {
+        "columns": 12,
+        "gap": "1rem",
+        "responsive_behavior": "stack_on_mobile"
+      },
+      "spacing": {
+        "section": "3rem",
+        "component": "1.5rem",
+        "element": "1rem"
+      }
+    },
+    "navigation": {
+      "header": {
+        "height": "4rem",
+        "background": "#F9FAFB",
+        "border": "1px solid #E5E7EB",
+        "sticky": true
+      },
+      "menu_items": {
+        "padding": "0.75rem 1rem",
+        "hover": {
+          "background": "#F3F4F6"
+        },
+        "active": {
+          "color": "#3B82F6"
+        }
+      }
+    }
+  },
+  "responsive_specs": {
+    "mobile": {
+      "layout": "stacked",
+      "navigation": "hamburger_menu",
+      "content_width": "100%",
+      "typography_scale": 0.9,
+      "touch_targets": "44px minimum",
+      "interactions": [
+        "tap",
+        "swipe",
+        "pinch_zoom"
+      ]
+    },
+    "tablet": {
+      "layout": "grid_2_column",
+      "navigation": "tab_bar",
+      "content_width": "90%",
+      "typography_scale": 1,
+      "touch_targets": "44px minimum",
+      "interactions": [
+        "tap",
+        "swipe",
+        "keyboard_optional"
+      ]
+    },
+    "desktop": {
+      "layout": "grid_multi_column",
+      "navigation": "horizontal_menu",
+      "content_width": "80%",
+      "typography_scale": 1,
+      "interactions": [
+        "mouse",
+        "keyboard",
+        "hover_states"
+      ]
+    },
+    "wide": {
+      "layout": "full_width_with_constraints",
+      "max_content_width": "1400px",
+      "typography_scale": 1.1,
+      "enhanced_spacing": true
+    }
+  },
+  "accessibility_specs": {
+    "wcag_level": "AA",
+    "requirements": {
+      "color_contrast": 4.5,
+      "keyboard_navigation": true,
+      "screen_reader_support": true,
+      "focus_indicators": true,
+      "text_scaling": true,
+      "motion_preferences": true
+    },
+    "implementation": {
+      "semantic_html": true,
+      "aria_labels": true,
+      "alt_text": true,
+      "form_labels": true,
+      "heading_hierarchy": true,
+      "landmark_roles": true
+    },
+    "testing_guidelines": [
+      "Test with keyboard navigation only",
+      "Verify screen reader compatibility",
+      "Check color contrast ratios",
+      "Test with 200% browser zoom",
+      "Validate HTML semantics",
+      "Test with reduced motion settings"
+    ]
+  }
+}

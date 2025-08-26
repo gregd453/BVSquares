@@ -1,0 +1,283 @@
+{
+  "projectName": "Admin Approval Platform",
+  "appType": "Sports Betting Platform",
+  "features": [
+    "Admin Panel",
+    "Mobile Responsive Design",
+    "Authentication",
+    "User Management",
+    "Dashboard",
+    "Game Management",
+    "Square Management",
+    "Admin Management"
+  ],
+  "awsServices": [
+    "AWS Lambda",
+    "API Gateway",
+    "DynamoDB",
+    "AWS Cognito"
+  ],
+  "database": "DynamoDB",
+  "auth": "AWS Cognito",
+  "originalRequirements": "# **BV Squares - MVP Requirements**\n\n## 📋 **OVERVIEW**\nWeb application for managing sports betting squares. Players register and request squares on game grids. Admins approve requests, assign random numbers, and update scores to determine winners. No payments - display names shown in squares for identification.\n\n---\n\n## 🎯 **BUSINESS REQUIREMENTS**\n\n### **MVP Scope**\n- Core sports squares game functionality with admin approval system\n- Basic user registration (username/password/display name)\n- Game creation and management by admins\n- Square requesting with approval workflow\n- Manual score updates and winner determination\n\n### **Excluded from MVP**\n- ❌ Payments ❌ Analytics ❌ Communications ❌ Social features\n\n---\n\n## ⚡ **FUNCTIONAL REQUIREMENTS**\n\n### **1. User Authentication**\n- Players: username/password/display name registration, separate login page\n- Admins: separate login system, manual account creation only\n- Display names shown in squares, must be unique\n- Separate session management for each user type\n\n### **2. Game Management (Admin)**\n- Create/edit games for football, basketball, soccer\n- Games have Setup/Active/Completed states\n- Fixed 10x10 grid (100 squares)\n- Include payout structure for reference (no actual payments)\n\n### **3. Square Request System**\n- Players request squares (multiple per game allowed)\n- Requests show as \"requested\" with display name until admin approval\n- Players can cancel their own pending requests (before approval only)\n- Admin approves/rejects requests individually\n- Once approved, only admin can remove squares from players\n- Only approved squares count as owned\n- Grid shows: available, requested (with name), approved (with name)\n- Error handling: prevent duplicate requests on same square\n\n### **4. Game Information**\n- Public pages with game details, rules, payout structure\n- All users can browse games without logging in\n\n### **5. Scoring & Winners**\n- No game score information will be displayed\n- Winners calculated by last digit of each team's score\n- Support multiple payout periods (quarters, halftime, final)\n- Results immediately visible to all users\n\n### **6. Number Assignment**\n- Admin triggers random 0-9 assignment to rows/columns\n- Only after squares are approved\n- Once numbers are assigned, they cannot be changed\n- Error handling: prevent assignment if no approved squares\n\n---\n\n## 👥 **USER REQUIREMENTS**\n\n### **Player User Requirements**\n\n**Registration and Login:**\n- Account creation with username, password, display name\n- Login/logout with session management\n- Separate player login page from admin\n\n**Game Discovery:**\n- Browse all available games with basic filtering (sport, status)\n- View game details before participating\n\n**Square Selection:**\n- View interactive 10x10 grid\n- See available, requested (with names), approved (with names) squares\n- Request squares with click/tap\n- Cancel pending requests only (before approval)\n- See own display name in \"requested\" squares while awaiting approval\n\n**Game Participation:**\n- Understand game rules and payout structure\n- View winning squares and results\n\n**User Experience:**\n- Mobile-friendly interface with clear error messages\n\n### **Admin User Requirements**\n\n**Admin Authentication:**\n- Separate admin login/logout with distinct interface\n- Secure session management\n\n**Game Creation:**\n- Create games with team names, dates, sport types\n- Add descriptions, rules, payout structures\n- Save drafts and publish when ready\n\n**Square Request Management:**\n- Review pending requests with player display names\n- Approve/reject individual requests with optional rejection reasons\n- Remove approved squares from players if needed\n- See which names are requesting which squares\n\n**Game Management:**\n- View/edit all games before activation\n- Monitor request/approval progress\n- Assign random numbers and manage game status\n\n**Scoring:**\n- No game score information displayed\n- View results by payout period, mark games completed\n\n**Administration:**\n- Dashboard with game overview\n- Basic user management\n\n---\n\n## 📱 **PAGES**\n\n**Public:** / (home), /login, /register, /admin/login, /games, /games/{id}/info, /games/{id}/grid, /games/{id}/results\n\n**Player:** /dashboard\n\n**Admin:** /admin, /admin/games, /admin/games/new, /admin/games/{id}/edit, /admin/games/{id}/requests, /admin/games/{id}/manage, /admin/games/{id}/scoring, /admin/requests\n\n---\n\n## ✅ **ACCEPTANCE CRITERIA**\n\n- [ ] Separate player/admin authentication with logout functionality\n- [ ] Players can request squares, cancel pending requests, but not remove approved squares\n- [ ] Admins can approve/reject individual requests and remove approved squares\n- [ ] Grid shows three states: available, requested (with names), approved (with names)\n- [ ] Game creation, number assignment, and scoring work end-to-end\n- [ ] Basic filtering and mobile-friendly interface",
+  "detectedDomain": "sports-gaming",
+  "domainConfidence": 1,
+  "matchedKeywords": [
+    "game",
+    "square",
+    "admin",
+    "request",
+    "name",
+    "player",
+    "user",
+    "display",
+    "display",
+    "login",
+    "request",
+    "view",
+    "remove",
+    "score"
+  ],
+  "dynamicVocabulary": {
+    "entities": [
+      "game",
+      "square",
+      "admin",
+      "request",
+      "name",
+      "player",
+      "user",
+      "display"
+    ],
+    "actions": [
+      "display",
+      "login",
+      "request",
+      "view",
+      "remove",
+      "score"
+    ],
+    "concepts": [
+      "admin approval",
+      "creation and",
+      "with approval",
+      "separate login",
+      "separate session",
+      "square request",
+      "with session",
+      "secure session",
+      "basic user",
+      "sports betting"
+    ],
+    "replacements": {
+      "records": "games",
+      "items": "games",
+      "ListPage": "GameListPage",
+      "CreatePage": "CreateGamePage",
+      "EditPage": "EditGamePage",
+      "DetailPage": "GameDetailPage",
+      "display Records": "Display Games",
+      "login Records": "Login Games",
+      "request Records": "Request Games"
+    }
+  },
+  "extractedEntities": [
+    "game",
+    "square",
+    "admin",
+    "request",
+    "name",
+    "player",
+    "user",
+    "display"
+  ],
+  "businessConcepts": [
+    "admin approval",
+    "creation and",
+    "with approval",
+    "separate login",
+    "separate session",
+    "square request",
+    "with session",
+    "secure session",
+    "basic user",
+    "sports betting"
+  ],
+  "userJourneys": [
+    {
+      "id": "admin-journey-1",
+      "name": "Admin Manage",
+      "actor": "admin",
+      "workflow": [
+        {
+          "stepNumber": 1,
+          "action": "Initiate manage for user",
+          "userIntent": "User wants to manage user",
+          "systemResponse": "Process manage request",
+          "dataOperations": [
+            {
+              "operation": "read",
+              "entityName": "user",
+              "fieldNames": [
+                "*"
+              ]
+            }
+          ],
+          "validationRules": [
+            "User has permission for manage"
+          ],
+          "errorHandling": [
+            {
+              "errorType": "generic",
+              "errorMessage": "manage failed",
+              "recoveryAction": "Retry action",
+              "userGuidance": "Please try again"
+            }
+          ],
+          "nextPossibleSteps": [
+            "Complete action",
+            "Cancel action"
+          ]
+        }
+      ],
+      "triggers": [
+        "Admin needs to manage"
+      ],
+      "outcomes": [
+        "User successfully managed"
+      ],
+      "dataInteractions": [
+        {
+          "stepNumber": 1,
+          "interactionType": "input",
+          "dataEntity": "user",
+          "fieldMappings": [
+            {
+              "sourceField": "userInput",
+              "targetField": "entityField"
+            }
+          ],
+          "businessRules": [
+            "Validate user data integrity"
+          ]
+        }
+      ],
+      "priority": "medium",
+      "complexity": "complex",
+      "estimatedDuration": "2-5 minutes"
+    }
+  ],
+  "acceptanceCriteria": [
+    {
+      "feature": "Admin Management",
+      "userStory": "As a admin, I want to admin management so that I can user successfully managed",
+      "givenWhenThen": [
+        {
+          "id": "gwt-admin-management-1",
+          "given": "I am a admin user",
+          "when": "I initiate manage for user",
+          "then": "User successfully managed",
+          "priority": "should"
+        }
+      ],
+      "cypressTests": [
+        {
+          "testName": "Admin Management - Admin Manage",
+          "userJourneyId": "admin-journey-1",
+          "testSteps": [
+            {
+              "action": "click",
+              "target": "[data-testid=\"initiate-manage-for-user\"]",
+              "value": null
+            }
+          ],
+          "dataSetup": [
+            {
+              "description": "Setup test data for Admin Manage",
+              "dataEntity": "user",
+              "setupData": {
+                "testField": "testValue"
+              },
+              "cleanupRequired": true
+            }
+          ],
+          "expectedOutcomes": [
+            {
+              "type": "should",
+              "condition": "be.visible",
+              "target": "[data-testid=\"success-message\"]",
+              "errorMessage": "Admin Manage should show success message"
+            }
+          ]
+        }
+      ],
+      "uiValidationPoints": [
+        {
+          "fieldName": "InitiatemanageforuserField",
+          "validationType": "required",
+          "validationRule": "User has permission for manage",
+          "errorMessage": "User has permission for manage validation failed",
+          "uiElement": "[data-testid=\"initiate-manage-for-user-field\"]"
+        }
+      ],
+      "apiValidationPoints": [
+        {
+          "endpoint": "/api/user",
+          "method": "GET",
+          "requestValidation": {
+            "requiredFields": [
+              "*"
+            ],
+            "fieldTypes": {},
+            "businessRules": [
+              "User has permission for manage"
+            ]
+          },
+          "responseValidation": {
+            "expectedStatus": [
+              200
+            ],
+            "responseSchema": {},
+            "sideEffectValidations": []
+          }
+        }
+      ],
+      "dataValidationPoints": []
+    }
+  ],
+  "dataLifecycles": [
+    {
+      "entity": "user",
+      "creationPoint": "admin creates via Admin Manage",
+      "creationTrigger": [
+        "Admin Manage: 1"
+      ],
+      "updateTriggers": [],
+      "consumptionPoints": [],
+      "relationships": []
+    }
+  ],
+  "architecturePattern": "dynamic",
+  "integrationRequirements": [],
+  "validationStrategy": {
+    "testingApproach": "behavior_driven_development",
+    "totalScenarios": 1,
+    "testTypes": {
+      "unit_tests": "Component and utility function testing",
+      "integration_tests": "API and database integration validation",
+      "e2e_tests": "Complete user journey validation using Cypress",
+      "validation_tests": "Form and data validation testing"
+    },
+    "prioritization": {
+      "high_priority": 0,
+      "medium_priority": 1,
+      "low_priority": 0
+    },
+    "coverage_targets": {
+      "user_journeys": "100%",
+      "acceptance_criteria": "100%",
+      "api_endpoints": "100%",
+      "critical_paths": "100%"
+    }
+  }
+}

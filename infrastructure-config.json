@@ -1,0 +1,632 @@
+{
+  "infrastructure_config": {
+    "resources": {
+      "lambda_functions": [
+        {
+          "name": "ApiFunction",
+          "runtime": "nodejs18.x",
+          "memory": 512,
+          "timeout": 30,
+          "environment_variables": [
+            "NODE_ENV",
+            "TABLE_NAME"
+          ]
+        }
+      ],
+      "dynamodb_tables": [
+        {
+          "name": "userTable",
+          "logical_name": "user",
+          "billing_mode": "PAY_PER_REQUEST",
+          "partition_key": "id",
+          "sort_key": null,
+          "attributes": [
+            {
+              "name": "id",
+              "type": "S"
+            },
+            {
+              "name": "email",
+              "type": "S"
+            },
+            {
+              "name": "name",
+              "type": "S"
+            },
+            {
+              "name": "entityField",
+              "type": "S"
+            },
+            {
+              "name": "createdAt",
+              "type": "S"
+            },
+            {
+              "name": "updatedAt",
+              "type": "S"
+            }
+          ],
+          "global_secondary_indexes": []
+        }
+      ],
+      "api_gateway": {
+        "type": "REST",
+        "stage_name": "prod",
+        "cors_enabled": true,
+        "throttling": "basic"
+      },
+      "s3_buckets": [],
+      "cognito_pools": [
+        {
+          "name": "UserPool",
+          "type": "user_pool",
+          "policies": [
+            "password_policy",
+            "mfa_optional"
+          ]
+        }
+      ],
+      "cloudfront_distributions": []
+    },
+    "estimated_cost": {
+      "monthly_estimate": "$5-25",
+      "breakdown": {
+        "lambda": "$1-5",
+        "api_gateway": "$1-10",
+        "dynamodb": "$1-5",
+        "s3": "$0-2",
+        "cognito": "$0-3"
+      },
+      "assumptions": [
+        "1000 requests/month",
+        "Basic usage patterns",
+        "US East region pricing"
+      ]
+    },
+    "performance_tier": "basic",
+    "schema_alignment_report": {
+      "overallValid": false,
+      "validationResults": [
+        {
+          "isValid": false,
+          "entityName": "user",
+          "validationChecks": [
+            {
+              "checkType": "field_naming",
+              "layer": "frontend",
+              "fieldName": "id",
+              "passed": true,
+              "message": "Frontend and API field naming is consistent"
+            },
+            {
+              "checkType": "field_naming",
+              "layer": "database",
+              "fieldName": "id",
+              "passed": true,
+              "message": "Database field naming follows snake_case convention"
+            },
+            {
+              "checkType": "type_consistency",
+              "layer": "frontend",
+              "fieldName": "id",
+              "passed": true,
+              "message": "frontend type string is compatible with api type string"
+            },
+            {
+              "checkType": "type_consistency",
+              "layer": "database",
+              "fieldName": "id",
+              "passed": true,
+              "message": "api type string is compatible with database type S"
+            },
+            {
+              "checkType": "constraint_alignment",
+              "layer": "frontend",
+              "fieldName": "id",
+              "passed": true,
+              "message": "Required constraint is consistent across layers"
+            },
+            {
+              "checkType": "field_naming",
+              "layer": "frontend",
+              "fieldName": "email",
+              "passed": true,
+              "message": "Frontend and API field naming is consistent"
+            },
+            {
+              "checkType": "field_naming",
+              "layer": "database",
+              "fieldName": "email",
+              "passed": true,
+              "message": "Database field naming follows snake_case convention"
+            },
+            {
+              "checkType": "type_consistency",
+              "layer": "frontend",
+              "fieldName": "email",
+              "passed": true,
+              "message": "frontend type string is compatible with api type string"
+            },
+            {
+              "checkType": "type_consistency",
+              "layer": "database",
+              "fieldName": "email",
+              "passed": true,
+              "message": "api type string is compatible with database type S"
+            },
+            {
+              "checkType": "constraint_alignment",
+              "layer": "frontend",
+              "fieldName": "email",
+              "passed": true,
+              "message": "Required constraint is consistent across layers"
+            },
+            {
+              "checkType": "field_naming",
+              "layer": "frontend",
+              "fieldName": "name",
+              "passed": true,
+              "message": "Frontend and API field naming is consistent"
+            },
+            {
+              "checkType": "field_naming",
+              "layer": "database",
+              "fieldName": "name",
+              "passed": true,
+              "message": "Database field naming follows snake_case convention"
+            },
+            {
+              "checkType": "type_consistency",
+              "layer": "frontend",
+              "fieldName": "name",
+              "passed": true,
+              "message": "frontend type string is compatible with api type string"
+            },
+            {
+              "checkType": "type_consistency",
+              "layer": "database",
+              "fieldName": "name",
+              "passed": true,
+              "message": "api type string is compatible with database type S"
+            },
+            {
+              "checkType": "constraint_alignment",
+              "layer": "frontend",
+              "fieldName": "name",
+              "passed": true,
+              "message": "Required constraint is consistent across layers"
+            }
+          ],
+          "misalignments": [
+            {
+              "severity": "error",
+              "type": "missing_field",
+              "description": "Field entityField is missing mappings for some layers",
+              "suggestedFix": "Add field mappings for entityField across all layers (frontend, API, database)",
+              "affectedLayers": [
+                "database"
+              ]
+            },
+            {
+              "severity": "error",
+              "type": "missing_field",
+              "description": "Field entity_field is missing mappings for some layers",
+              "suggestedFix": "Add field mappings for entity_field across all layers (frontend, API, database)",
+              "affectedLayers": [
+                "frontend",
+                "api"
+              ]
+            },
+            {
+              "severity": "error",
+              "type": "missing_field",
+              "description": "Field createdAt is missing mappings for some layers",
+              "suggestedFix": "Add field mappings for createdAt across all layers (frontend, API, database)",
+              "affectedLayers": [
+                "database"
+              ]
+            },
+            {
+              "severity": "error",
+              "type": "missing_field",
+              "description": "Field created_at is missing mappings for some layers",
+              "suggestedFix": "Add field mappings for created_at across all layers (frontend, API, database)",
+              "affectedLayers": [
+                "frontend",
+                "api"
+              ]
+            },
+            {
+              "severity": "error",
+              "type": "missing_field",
+              "description": "Field updatedAt is missing mappings for some layers",
+              "suggestedFix": "Add field mappings for updatedAt across all layers (frontend, API, database)",
+              "affectedLayers": [
+                "database"
+              ]
+            },
+            {
+              "severity": "error",
+              "type": "missing_field",
+              "description": "Field updated_at is missing mappings for some layers",
+              "suggestedFix": "Add field mappings for updated_at across all layers (frontend, API, database)",
+              "affectedLayers": [
+                "frontend",
+                "api"
+              ]
+            }
+          ]
+        }
+      ],
+      "entitySchemas": [
+        {
+          "entityName": "user",
+          "frontendFields": [
+            {
+              "name": "id",
+              "type": "string",
+              "required": true,
+              "constraints": [
+                "^[a-zA-Z0-9-_]+$"
+              ],
+              "validation": [
+                "^[a-zA-Z0-9-_]+$"
+              ]
+            },
+            {
+              "name": "email",
+              "type": "string",
+              "required": true,
+              "constraints": [
+                "^[^@]+@[^@]+.[^@]+$"
+              ],
+              "validation": [
+                "^[^@]+@[^@]+.[^@]+$"
+              ]
+            },
+            {
+              "name": "name",
+              "type": "string",
+              "required": true,
+              "constraints": [
+                "min:1,max:100"
+              ],
+              "validation": [
+                "min:1,max:100"
+              ]
+            },
+            {
+              "name": "entityField",
+              "type": "string",
+              "required": false,
+              "constraints": [
+                "required"
+              ],
+              "validation": [
+                "required"
+              ]
+            },
+            {
+              "name": "createdAt",
+              "type": "string",
+              "required": true,
+              "constraints": [],
+              "validation": []
+            },
+            {
+              "name": "updatedAt",
+              "type": "string",
+              "required": true,
+              "constraints": [],
+              "validation": []
+            }
+          ],
+          "apiFields": [
+            {
+              "name": "id",
+              "type": "string",
+              "required": true,
+              "constraints": [
+                "^[a-zA-Z0-9-_]+$"
+              ],
+              "validation": [
+                "^[a-zA-Z0-9-_]+$"
+              ]
+            },
+            {
+              "name": "email",
+              "type": "string",
+              "required": true,
+              "constraints": [
+                "^[^@]+@[^@]+.[^@]+$"
+              ],
+              "validation": [
+                "^[^@]+@[^@]+.[^@]+$"
+              ]
+            },
+            {
+              "name": "name",
+              "type": "string",
+              "required": true,
+              "constraints": [
+                "min:1,max:100"
+              ],
+              "validation": [
+                "min:1,max:100"
+              ]
+            },
+            {
+              "name": "entityField",
+              "type": "string",
+              "required": false,
+              "constraints": [
+                "required"
+              ],
+              "validation": [
+                "required"
+              ]
+            },
+            {
+              "name": "createdAt",
+              "type": "string",
+              "required": true,
+              "constraints": [],
+              "validation": []
+            },
+            {
+              "name": "updatedAt",
+              "type": "string",
+              "required": true,
+              "constraints": [],
+              "validation": []
+            }
+          ],
+          "databaseFields": [
+            {
+              "name": "id",
+              "type": "S",
+              "required": true,
+              "constraints": [
+                "NOT_NULL",
+                "UNIQUE"
+              ],
+              "validation": []
+            },
+            {
+              "name": "email",
+              "type": "S",
+              "required": true,
+              "constraints": [
+                "NOT_NULL",
+                "UNIQUE",
+                "EMAIL_FORMAT"
+              ],
+              "validation": []
+            },
+            {
+              "name": "name",
+              "type": "S",
+              "required": true,
+              "constraints": [
+                "NOT_NULL"
+              ],
+              "validation": []
+            }
+          ],
+          "relationships": []
+        }
+      ],
+      "misalignmentSummary": {
+        "errors": 6,
+        "warnings": 0,
+        "fixRecommendations": [
+          "Add field mappings for entityField across all layers (frontend, API, database)",
+          "Add field mappings for entity_field across all layers (frontend, API, database)",
+          "Add field mappings for createdAt across all layers (frontend, API, database)",
+          "Add field mappings for created_at across all layers (frontend, API, database)",
+          "Add field mappings for updatedAt across all layers (frontend, API, database)",
+          "Add field mappings for updated_at across all layers (frontend, API, database)"
+        ]
+      }
+    },
+    "connectivity_report": {
+      "isValid": true,
+      "validationResults": [
+        {
+          "component": "API Gateway",
+          "target": "ApiFunction",
+          "protocol": "HTTPS",
+          "passed": true,
+          "latencyProjection": 50,
+          "securityCompliant": true
+        },
+        {
+          "component": "ApiFunction",
+          "target": "userTable",
+          "protocol": "HTTPS/DynamoDB",
+          "passed": true,
+          "latencyProjection": 10,
+          "securityCompliant": true
+        }
+      ],
+      "networkTopology": {
+        "apiGateway": {
+          "name": "API Gateway",
+          "type": "AWS::ApiGateway::RestApi",
+          "connections": [
+            "ApiFunction"
+          ],
+          "endpoints": [
+            "/{proxy+}"
+          ]
+        },
+        "lambdaFunctions": [
+          {
+            "name": "ApiFunction",
+            "type": "AWS::Lambda::Function",
+            "connections": [
+              "userTable"
+            ],
+            "endpoints": [
+              "/api/apifunction"
+            ]
+          }
+        ],
+        "databaseTables": [
+          {
+            "name": "userTable",
+            "type": "AWS::DynamoDB::Table",
+            "connections": [],
+            "endpoints": [
+              "dynamodb:table/userTable"
+            ]
+          }
+        ],
+        "externalServices": []
+      },
+      "performanceMetrics": [
+        {
+          "scenario": "Single Entity CRUD",
+          "estimatedLatency": 100,
+          "throughputLimit": 1000,
+          "bottlenecks": [
+            "DynamoDB Read Capacity",
+            "Lambda Cold Start"
+          ]
+        },
+        {
+          "scenario": "Batch Operations",
+          "estimatedLatency": 500,
+          "throughputLimit": 100,
+          "bottlenecks": [
+            "DynamoDB Batch Write Capacity",
+            "Lambda Timeout"
+          ]
+        }
+      ]
+    },
+    "entity_schema_mapping": {
+      "entities": [
+        {
+          "name": "user",
+          "displayName": "User",
+          "tableName": "userTable",
+          "primaryKey": {
+            "fields": [
+              "id"
+            ],
+            "type": "simple",
+            "autoGenerated": true
+          },
+          "fields": [
+            {
+              "name": "id",
+              "type": "string",
+              "required": true,
+              "frontendType": "string",
+              "apiType": "string",
+              "databaseType": "S"
+            },
+            {
+              "name": "email",
+              "type": "email",
+              "required": true,
+              "frontendType": "string",
+              "apiType": "string",
+              "databaseType": "S"
+            },
+            {
+              "name": "name",
+              "type": "string",
+              "required": true,
+              "frontendType": "string",
+              "apiType": "string",
+              "databaseType": "S"
+            },
+            {
+              "name": "entityField",
+              "type": "string",
+              "required": false,
+              "frontendType": "string",
+              "apiType": "string",
+              "databaseType": "S"
+            },
+            {
+              "name": "createdAt",
+              "type": "datetime",
+              "required": true,
+              "frontendType": "string",
+              "apiType": "string",
+              "databaseType": "S"
+            },
+            {
+              "name": "updatedAt",
+              "type": "datetime",
+              "required": true,
+              "frontendType": "string",
+              "apiType": "string",
+              "databaseType": "S"
+            }
+          ]
+        }
+      ],
+      "relationships": []
+    }
+  },
+  "environment_configs": {
+    "dev": {
+      "environment": "dev",
+      "aws_region": "us-east-1",
+      "stack_name": "claude-pipeline-dev",
+      "parameters": {
+        "Environment": "dev"
+      },
+      "tags": {
+        "Environment": "dev",
+        "Project": "claude-pipeline",
+        "ManagedBy": "serverless-framework"
+      },
+      "monitoring": {
+        "cloudwatch_logs": true,
+        "xray_tracing": false,
+        "alarm_email": null
+      },
+      "schema_configuration": {
+        "entity_validation_enabled": true,
+        "field_consistency_checks": 1,
+        "schema_drift_detection": false,
+        "auto_schema_migration": true
+      },
+      "entity_environment_variables": {
+        "USER_TABLE_NAME": "dev-user"
+      }
+    },
+    "prod": {
+      "environment": "prod",
+      "aws_region": "us-east-1",
+      "stack_name": "claude-pipeline-prod",
+      "parameters": {
+        "Environment": "prod"
+      },
+      "tags": {
+        "Environment": "prod",
+        "Project": "claude-pipeline",
+        "ManagedBy": "serverless-framework"
+      },
+      "monitoring": {
+        "cloudwatch_logs": true,
+        "xray_tracing": true,
+        "alarm_email": "alerts@example.com"
+      },
+      "schema_configuration": {
+        "entity_validation_enabled": true,
+        "field_consistency_checks": 1,
+        "schema_drift_detection": true,
+        "auto_schema_migration": false
+      },
+      "entity_environment_variables": {
+        "USER_TABLE_NAME": "prod-user"
+      }
+    }
+  }
+}
